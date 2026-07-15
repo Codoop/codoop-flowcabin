@@ -2,7 +2,9 @@
 
 # codoop-game
 
-**从一句游戏想法，到可试玩、可提交的离线 H5 游戏**
+**English** · [简体中文](./README.zh-CN.md)
+
+**From a game idea to a playable, submit-ready offline H5 game**
 
 ![Codex Skill](https://img.shields.io/badge/Codex-skill-1D4ED8)
 ![Claude Code](https://img.shields.io/badge/Claude%20Code-plugin-8A63D2)
@@ -12,39 +14,39 @@
 
 </div>
 
-**codoop-game** 是面向创作者的单一游戏创建循环。你用大白话描述想做的游戏；Codex 或 Claude 负责游戏小卡、实现、试玩、质量检查和打包，最后交付 Codoop 门户所需的 `game.zip` 与独立 `cover.png`。
+**codoop-game** is a single creation loop for making Codoop games. Describe a game in plain language; Codex or Claude handles the game card, implementation, preview, quality gates, and packaging. The result is a portal-ready `game.zip` and a separate `cover.png`.
 
-目前的兼容性基线是本地 preview harness；真实 Codoop Desktop webview 验证尚未接入，因此项目不会把 harness 通过表述为 Desktop 验证通过。
+The current compatibility baseline is the local preview harness. Real Codoop Desktop webview validation has not been connected yet, so passing the harness is never presented as Desktop validation.
 
 ```
-你说一句游戏想法                                      你决定何时交付/发布
-       │                                                        ▲
-       ▼                                                        │
-┌──────────────── Codex / Claude 读取 SKILL.md 并编排创建循环 ────────────────┐
-│ 游戏小卡 → 专家审查 → 实现 → harness 试玩 → 反馈迭代 → 校验 → 打包       │
-│             [规则]       [agent]    [script]       [agent]    [scripts]  │
-│                                                                            │
-│ 固定专家：游戏设计师、技术美术；地图/叙事/音频专家按需加入。              │
-└───────────────────────────────────────────────────────────────────────────┘
+you describe a game idea                              you decide when to deliver and publish
+        │                                                                  ▲
+        ▼                                                                  │
+┌────────────────── Codex / Claude reads SKILL.md and orchestrates ──────────────────┐
+│ game card → expert review → build → harness preview → feedback loop → validate → package │
+│              [rules]        [agent]    [script]          [agent]        [scripts] │
+│                                                                                     │
+│ fixed experts: game design and technical art; level, narrative, and audio join as needed │
+└─────────────────────────────────────────────────────────────────────────────────────┘
 ```
 
 ---
 
-## 安装
+## Install
 
-### Codex（Desktop 或 CLI）
+### Codex (Desktop or CLI)
 
-从 GitHub marketplace 安装：
+Install from the GitHub marketplace repository:
 
 ```bash
 codex plugin marketplace add Codoop/codoop-game
 codex plugin add codoop-game@codoop-game
 ```
 
-然后重启或重新打开 Codex，直接开始：
+Restart or reopen Codex, then simply say:
 
 ```text
-用 $codoop-game 做一款玩家可以随时停下、回来继续玩的种田小游戏。
+Use $codoop-game to make a farming game that players can pause and continue later.
 ```
 
 ### Claude Code
@@ -54,86 +56,84 @@ codex plugin add codoop-game@codoop-game
 /plugin install codoop-game@codoop-game
 ```
 
-若没有 SSH 配置，可使用完整 HTTPS 地址：
+If SSH is not configured, use the full HTTPS URL:
 
 ```text
 /plugin marketplace add https://github.com/Codoop/codoop-game.git
 /plugin install codoop-game@codoop-game
 ```
 
-本地开发可使用：
+For local development:
 
 ```bash
 claude --plugin-dir /path/to/codoop-game
 ```
 
-**前提**：Node.js 20+，以及系统自带的 `zip` / `unzip` 命令。运行时不依赖第三方 npm 包。
+**Prerequisites**: Node.js 20+ and system `zip` / `unzip`. There are no third-party runtime npm dependencies.
 
 ---
 
-## 快速开始
+## Quick start
 
-告诉已安装插件的 agent 你的游戏想法即可：
+Tell the installed agent what you want to make:
 
 ```text
-用 $codoop-game 做一个像素风太空贸易策略游戏。玩家可以随时停下，回来继续玩；最后给我可提交的游戏包和封面。
+Use $codoop-game to make a pixel-art space-trading strategy game. Players should be able to stop and return later; give me a submission package and cover when it is ready.
 ```
 
-创建循环会：
+The creation loop:
 
-1. 用一页游戏小卡确认玩家目标、核心循环、操作与续玩方式。
-2. 自动加载游戏设计师与技术美术；地图、剧情、音效需求会触发对应专家。
-3. 在创作者选择的目录创建隔离的静态 H5 项目。
-4. 启动本地 harness，模拟 `FlowCabinGameAPI` 的输入、尺寸和生命周期。
-5. 根据每轮一项体验反馈修改并再次试玩。
-6. 优先请求创作者提供封面；创作者要求时才生成原创 `cover.png`。
-7. 校验离线资源、入口、体积、文件数和封面，交付提交产物。
-
-最终目录：
+1. Writes a one-page game card with the player goal, loop, controls, and continuation model.
+2. Loads game design and technical-art experts; level, narrative, and audio experts join when the idea requires them.
+3. Creates an isolated static H5 project in the creator-selected workspace.
+4. Starts a local harness that mocks FlowCabinGameAPI input, size, and lifecycle events.
+5. Applies one player-visible feedback change per iteration and previews it again.
+6. Asks the creator for a cover first; generates an original `cover.png` only when requested.
+7. Validates offline resources, entry point, size, file count, and cover before delivering the package.
 
 ```text
 dist/
-├── game.zip                 # 上传到 Codoop 门户的运行包
-├── cover.png                # 独立商品封面，不进入 ZIP
-└── validation-report.md     # agent 在交付时写入的验证结果
+├── game.zip                 # runtime package for the Codoop portal
+├── cover.png                # separate product cover, never in the ZIP
+└── validation-report.md     # validation outcome written by the agent at delivery
 ```
 
 ---
 
-## 架构
+## Architecture
 
-项目由三类内容组成：
+The project has three kinds of components:
 
-1. **Skill 编排**：[`skills/codoop-game/SKILL.md`](./skills/codoop-game/SKILL.md) 定义对话方式、专家门禁、预览和交付顺序。
-2. **确定性脚本**：创建 starter、运行 preview harness、扫描离线限制、校验封面和生成 ZIP；这些可精确复现的步骤不依赖 agent 判断。
-3. **专家与契约**：[`skills/_shared/`](./skills/_shared/) 提供设计角色；`references/` 固化 API、提交包、封面与质量规则。
+1. **Skill orchestration** — [`skills/codoop-game/SKILL.md`](./skills/codoop-game/SKILL.md) defines the conversation, expert gates, preview, and delivery sequence.
+2. **Deterministic scripts** — create starters, run the preview harness, scan offline restrictions, validate covers, and package the ZIP without relying on agent judgment.
+3. **Experts and contracts** — [`skills/_shared/`](./skills/_shared/) contains design roles; `references/` freezes API, package, cover, and quality rules.
 
-更完整的目录职责、数据流与质量门见 [Skill 架构说明](./docs/skill-architecture.md)。
+See the full [Skill architecture](./docs/skill-architecture.md) for responsibilities, data flow, and quality gates.
 
-### 项目结构
+### Project structure
 
 ```text
 codoop-game/
-├── .codex-plugin/             # Codex 插件入口
-├── .claude-plugin/            # Claude Code 插件入口与 marketplace
+├── .codex-plugin/             # Codex plugin manifest
+├── .claude-plugin/            # Claude Code plugin and marketplace manifest
 ├── skills/
-│   ├── codoop-game/           # 主 Skill、脚本、参考契约和 starter
-│   └── _shared/               # 可按需加载的游戏专家定义
-├── tests/                     # 单元与集成测试
-└── docs/                      # 公开兼容性与架构说明
+│   ├── codoop-game/           # main Skill, scripts, contracts, and starters
+│   └── _shared/               # on-demand game expert definitions
+├── tests/                     # unit and integration tests
+└── docs/                      # public compatibility and architecture docs
 ```
 
 ---
 
-## 本地开发
+## Local development
 
-运行全部测试：
+Run all tests:
 
 ```bash
 npm test
 ```
 
-手动验证完整闭环：
+Run the complete flow manually:
 
 ```bash
 node skills/codoop-game/scripts/create-game.mjs /tmp my-game --generate-cover
@@ -143,11 +143,11 @@ node skills/codoop-game/scripts/validate-cover.mjs /tmp/my-game/cover.png
 node skills/codoop-game/scripts/package-game.mjs /tmp/my-game
 ```
 
-`--generate-cover` 仅用于开发或创作者明确要求生成封面时。正常创建流程应优先由创作者提供封面。
+Use `--generate-cover` only for development or when a creator has explicitly asked for a generated cover. The normal workflow asks the creator to provide it first.
 
-## 贡献
+## Contributing
 
-修改兼容性契约时，先更新 `docs/compatibility.md` 与对应 `references/`，再同步修改 starter、harness、校验脚本和测试。每个行为改变都应有测试，并保持 `game.zip` 不含 `cover.png`。
+When changing a compatibility contract, update `docs/compatibility.md` and the corresponding `references/` first, then update starters, the harness, validation scripts, and tests. Every behavioral change needs a test, and `game.zip` must never contain `cover.png`.
 
 ## License
 
