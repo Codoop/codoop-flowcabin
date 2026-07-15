@@ -14,7 +14,7 @@
 
 </div>
 
-**codoop-game** 是一个单一游戏创建循环。创作者用大白话描述游戏；Codex 或 Claude 负责游戏小卡、实现、试玩、质量门和打包，最终交付可供 Codoop 门户使用的 `game.zip` 与独立 `cover.png`。
+**codoop-game** 是一个桌面端 Codoop 游戏插件的单一创建循环。创作者用大白话描述游戏；Codex 或 Claude 负责游戏小卡、实现、主动试玩、质量门和打包，最终交付可供 Codoop 门户使用的 `game.zip` 与独立 `cover.png`。
 
 当前兼容性基线是本地 preview harness。真实 Codoop Desktop webview 验证尚未接入，因此 harness 通过不会被表述为已经通过 Desktop 验证。
 
@@ -70,8 +70,8 @@ claude --plugin-dir /path/to/codoop-game
 1. 用一页游戏小卡明确玩家目标、核心循环、操作和续玩方式。
 2. 固定加载游戏设计师与技术美术；地图、剧情、音效需求分别触发对应专家。
 3. 在创作者选择的工作目录创建隔离的静态 H5 项目。
-4. 用本地 harness 模拟 FlowCabinGameAPI 的输入、尺寸和生命周期。
-5. 每轮只处理一项玩家可感知的反馈，然后重新试玩。
+4. 用本地 harness 模拟桌面端 FlowCabinGameAPI 的输入、尺寸和生命周期，并主动邀请创作者试玩。
+5. 每轮只处理一项玩家可感知的反馈，并再次邀请针对性试玩。
 6. 优先请求创作者提供封面；只有明确要求时才生成原创 `cover.png`。
 7. 校验离线资源、入口、体积、文件数和封面后再交付。
 
@@ -90,7 +90,7 @@ dist/
 
 1. **Skill 编排**：[`skills/codoop-game/SKILL.md`](./skills/codoop-game/SKILL.md) 定义对话、专家门禁、预览和交付顺序。
 2. **确定性脚本**：创建 starter、运行 harness、扫描离线限制、校验封面和生成 ZIP，不依赖 agent 的主观判断。
-3. **专家与契约**：[`skills/_shared/`](./skills/_shared/) 存放设计角色；`references/` 固化 API、提交包、封面与质量规则。
+3. **专家与契约**：[`skills/_shared/`](./skills/_shared/) 存放设计角色；`references/` 固化桌面 API、提交包、封面、视觉与质量规则。
 
 完整的职责、数据流和质量门见[中文 Skill 架构说明](./docs/skill-architecture.zh-CN.md)。
 独立安装和其他 agent 的说明见[安装文档](./docs/install.zh-CN.md)。

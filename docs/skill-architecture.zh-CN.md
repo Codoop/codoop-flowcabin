@@ -2,7 +2,7 @@
 
 [English](./skill-architecture.md) · **简体中文**
 
-`codoop-game` 是一个离线 H5 游戏创建系统：agent 负责创意和工程判断，脚本负责可重复的验证。它不负责发布游戏，v1 也不声明已通过真实 Codoop Desktop webview 验证；它只交付创作者可试玩、可本地验证、可带到门户提交的产物。
+`codoop-game` 是一个仅面向桌面端的离线 H5 游戏创建系统：agent 负责创意和工程判断，脚本负责可重复的验证。它不负责发布游戏，v1 也不声明已通过真实 Codoop Desktop webview 验证；它只交付创作者可试玩、可本地验证、可带到门户提交的精致产物。
 
 ## 组件边界
 
@@ -35,8 +35,8 @@ flowchart LR
 1. **游戏小卡**：主 Skill 将玩家目标、循环、操作、反馈、结束/续玩方式和当前改动假设写入 `design-notes.md`。
 2. **专家编排**：游戏设计师和技术美术固定参与。地图或进度触发关卡设计师；角色、剧情或选择触发叙事设计师；任何声音需求触发音频设计师。
 3. **首次可玩版本**：`create-game.mjs` 将 Canvas 或 DOM starter 复制到独立项目。游戏只使用本地资源和 `window.FlowCabinGameAPI`。
-4. **预览验证**：`preview-harness.mjs` 提供项目、注入最小生产 API mock，并暴露输入、resize、pause、resume 和 destroy 控制。
-5. **反馈回路**：每轮只改一项玩家可感知的体验。游戏设计师先界定影响范围，再加载受影响专家、实现并重新预览。
+4. **预览验证**：`preview-harness.mjs` 提供项目、注入最小生产 API mock，并暴露桌面输入、resize、pause、resume 和 destroy 控制。Skill 会主动给创作者 URL 和具体试玩任务。
+5. **反馈回路**：每轮只改一项玩家可感知的体验。游戏设计师先界定影响范围，再加载受影响专家、实现并邀请创作者进行针对性试玩。
 6. **交付门禁**：所有已触发专家最终放行后，运行游戏和封面校验。`package-game.mjs` 只把运行文件归档到 `game.zip`，并将验证通过的封面独立复制到 `dist/cover.png`。
 
 ## 质量门
@@ -55,4 +55,5 @@ flowchart LR
 - **渐进加载**：`SKILL.md` 保持简洁；稳定细节放在 references；条件专家只在相关时加载。
 - **本地优先**：所有运行资源都在 ZIP 内，商品封面与运行包分离，门户发布处于 Skill 边界外。
 - **默认可恢复**：starter 将保存、暂停、恢复、销毁和尺寸变化当作基础能力，而非后期补充。
+- **桌面优先**：鼠标和键盘是主要输入；手机和触控优先 UI 明确不在范围内。
 - **诚实的验证范围**：harness 证明的是本地 API 契约模拟；只有未来接入 Electron/webview E2E 才能声称 Desktop 兼容。

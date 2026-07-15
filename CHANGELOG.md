@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.0-alpha.2] - 2026-07-15
+
+### Changed
+
+- The Skill now proactively invites creator playtests after the first playable
+  build, material experience changes, and before final packaging.
+- Starters and technical-art rules now set a desktop-first, authored visual
+  baseline; phone and touch-first requirements are out of scope.
+
 ## [0.1.0-alpha.1] - 2026-07-15
 
 ### Added

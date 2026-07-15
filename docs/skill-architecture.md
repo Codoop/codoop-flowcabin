@@ -2,7 +2,7 @@
 
 **English** · [简体中文](./skill-architecture.zh-CN.md)
 
-`codoop-game` is an offline H5 game-creation system where the agent makes creative and engineering decisions while scripts perform repeatable checks. It does not publish games, and v1 does not claim real Codoop Desktop webview validation. Its responsibility is to deliver a playable, locally validated package that a creator can take to the portal.
+`codoop-game` is an offline, desktop-only H5 game-creation system where the agent makes creative and engineering decisions while scripts perform repeatable checks. It does not publish games, and v1 does not claim real Codoop Desktop webview validation. Its responsibility is to deliver a polished, playable, locally validated package that a creator can take to the portal.
 
 ## Component boundaries
 
@@ -35,8 +35,8 @@ flowchart LR
 1. **Game card** — the main Skill captures player goal, loop, controls, feedback, ending/continuation model, and the current change hypothesis in `design-notes.md`.
 2. **Expert orchestration** — game design and technical art always participate. Maps or progression trigger level design; characters, story, or choices trigger narrative design; any sound triggers audio design.
 3. **First playable build** — `create-game.mjs` copies a Canvas or DOM starter into an independent project. The game uses only local resources and `window.FlowCabinGameAPI`.
-4. **Preview validation** — `preview-harness.mjs` serves the project, injects the minimal production API mock, and exposes input, resize, pause, resume, and destroy controls.
-5. **Feedback loop** — each iteration changes one player-visible experience. Game design scopes the request, then only affected experts are reloaded before implementation and another preview.
+4. **Preview validation** — `preview-harness.mjs` serves the project, injects the minimal production API mock, and exposes desktop input, resize, pause, resume, and destroy controls. The Skill proactively gives the creator a URL and concrete playtest tasks.
+5. **Feedback loop** — each iteration changes one player-visible experience. Game design scopes the request, then only affected experts are reloaded before implementation and another focused creator playtest.
 6. **Delivery gate** — after final approval from every triggered expert, game and cover validation run. `package-game.mjs` archives only runtime files in `game.zip` and copies the validated cover separately to `dist/cover.png`.
 
 ## Quality gates
@@ -55,4 +55,5 @@ flowchart LR
 - **Progressive loading** — `SKILL.md` stays compact; stable detail lives in references; conditional experts load only when relevant.
 - **Local-first** — all runtime resources are in the ZIP, product cover and runtime package are separate, and portal publishing stays outside the Skill boundary.
 - **Resumable by default** — starters treat persistence, pause, resume, destroy, and resizing as foundations rather than late additions.
+- **Desktop by design** — mouse and keyboard are primary; phone and touch-first UI are explicitly out of scope.
 - **Honest validation scope** — the harness proves a local API-contract simulation. Only a future Electron/webview E2E can establish a Desktop compatibility claim.

@@ -33,3 +33,17 @@ test('can create the DOM starter when a game benefits from semantic UI', async (
   const html = await readFile(join(project, 'index.html'), 'utf8');
   assert.match(html, /data-game-action/);
 });
+
+test('ships desktop-first starters with an authored visual baseline', async () => {
+  const workspace = await mkdtemp(join(tmpdir(), 'codoop-visual-'));
+  const canvasProject = await createGame(workspace, 'canvas-game');
+  const domProject = await createGame(workspace, 'dom-game', { starter: 'dom' });
+
+  const canvas = await readFile(join(canvasProject, 'app.js'), 'utf8');
+  const domStyles = await readFile(join(domProject, 'styles.css'), 'utf8');
+  assert.match(canvas, /devicePixelRatio/);
+  assert.match(canvas, /createLinearGradient/);
+  assert.match(domStyles, /letter-spacing/);
+  assert.match(domStyles, /box-shadow/);
+  assert.doesNotMatch(domStyles, /touch-action/);
+});

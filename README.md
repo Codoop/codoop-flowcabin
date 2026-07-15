@@ -14,7 +14,7 @@
 
 </div>
 
-**codoop-game** is a single creation loop for making Codoop games. Describe a game in plain language; Codex or Claude handles the game card, implementation, preview, quality gates, and packaging. The result is a portal-ready `game.zip` and a separate `cover.png`.
+**codoop-game** is a single creation loop for making desktop Codoop game plugins. Describe a game in plain language; Codex or Claude handles the game card, implementation, proactive playtests, quality gates, and packaging. The result is a portal-ready `game.zip` and a separate `cover.png`.
 
 The current compatibility baseline is the local preview harness. Real Codoop Desktop webview validation has not been connected yet, so passing the harness is never presented as Desktop validation.
 
@@ -86,8 +86,8 @@ The creation loop:
 1. Writes a one-page game card with the player goal, loop, controls, and continuation model.
 2. Loads game design and technical-art experts; level, narrative, and audio experts join when the idea requires them.
 3. Creates an isolated static H5 project in the creator-selected workspace.
-4. Starts a local harness that mocks FlowCabinGameAPI input, size, and lifecycle events.
-5. Applies one player-visible feedback change per iteration and previews it again.
+4. Starts a local harness that mocks desktop FlowCabinGameAPI input, size, and lifecycle events, then proactively asks the creator to play.
+5. Applies one player-visible feedback change per iteration and invites another focused playtest.
 6. Asks the creator for a cover first; generates an original `cover.png` only when requested.
 7. Validates offline resources, entry point, size, file count, and cover before delivering the package.
 
@@ -106,7 +106,7 @@ The project has three kinds of components:
 
 1. **Skill orchestration** — [`skills/codoop-game/SKILL.md`](./skills/codoop-game/SKILL.md) defines the conversation, expert gates, preview, and delivery sequence.
 2. **Deterministic scripts** — create starters, run the preview harness, scan offline restrictions, validate covers, and package the ZIP without relying on agent judgment.
-3. **Experts and contracts** — [`skills/_shared/`](./skills/_shared/) contains design roles; `references/` freezes API, package, cover, and quality rules.
+3. **Experts and contracts** — [`skills/_shared/`](./skills/_shared/) contains design roles; `references/` freezes desktop API, package, cover, visual, and quality rules.
 
 See the full [Skill architecture](./docs/skill-architecture.md) for responsibilities, data flow, and quality gates.
 See [installation details](./docs/install.md) for standalone Skill installation and other agents.
