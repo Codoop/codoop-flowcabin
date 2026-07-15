@@ -1,5 +1,20 @@
+# dependencies and test output
 node_modules/
 coverage/
-dist/
 .preview/
+test-results/
+
+# generated game projects and deliverables
+dist/
 *.zip
+
+# local configuration and editor files
+.env
+.env.*
+!.env.example
+.DS_Store
+*.log
+
+# local skill-install targets
+.codex/
+.claude/

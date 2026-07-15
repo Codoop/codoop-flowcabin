@@ -109,6 +109,7 @@ The project has three kinds of components:
 3. **Experts and contracts** — [`skills/_shared/`](./skills/_shared/) contains design roles; `references/` freezes API, package, cover, and quality rules.
 
 See the full [Skill architecture](./docs/skill-architecture.md) for responsibilities, data flow, and quality gates.
+See [installation details](./docs/install.md) for standalone Skill installation and other agents.
 
 ### Project structure
 

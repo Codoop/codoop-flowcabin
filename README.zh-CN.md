@@ -93,6 +93,7 @@ dist/
 3. **专家与契约**：[`skills/_shared/`](./skills/_shared/) 存放设计角色；`references/` 固化 API、提交包、封面与质量规则。
 
 完整的职责、数据流和质量门见[中文 Skill 架构说明](./docs/skill-architecture.zh-CN.md)。
+独立安装和其他 agent 的说明见[安装文档](./docs/install.zh-CN.md)。
 
 ### 项目结构
 
