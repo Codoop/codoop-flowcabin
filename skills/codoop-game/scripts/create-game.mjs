@@ -52,18 +52,18 @@ function defaultCover() {
   ]);
 }
 
-export async function createGame(workspace, name = 'my-codoop-game') {
+export async function createGame(workspace, name = 'my-codoop-game', { generateCover = false } = {}) {
   const target = join(workspace, name);
   await mkdir(target, { recursive: true });
   await cp(starterDirectory, target, { recursive: true });
-  await writeFile(join(target, 'cover.png'), defaultCover());
+  if (generateCover) await writeFile(join(target, 'cover.png'), defaultCover());
   return target;
 }
 
 async function main() {
   const workspace = process.argv[2] ?? process.cwd();
   const name = process.argv[3] ?? 'my-codoop-game';
-  console.log(await createGame(workspace, name));
+  console.log(await createGame(workspace, name, { generateCover: process.argv.includes('--generate-cover') }));
 }
 
 if (process.argv[1] && process.argv[1].split(sep).at(-1) === 'create-game.mjs') main();

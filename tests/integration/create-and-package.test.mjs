@@ -13,13 +13,14 @@ const run = promisify(execFile);
 
 test('creates a resumable canvas game and packages runtime files without its cover', async () => {
   const workspace = await mkdtemp(join(tmpdir(), 'codoop-create-'));
-  const project = await createGame(workspace, 'star-farm');
+  const project = await createGame(workspace, 'star-farm', { generateCover: true });
   await access(join(project, 'index.html'));
   await access(join(project, 'app.js'));
   await access(join(project, 'styles.css'));
   await readFile(join(project, 'cover.png'));
 
   const zip = await packageGame(project);
+  await access(join(project, 'dist', 'cover.png'));
   const { stdout } = await run('unzip', ['-Z1', zip]);
   assert.match(stdout, /^index\.html$/m);
   assert.match(stdout, /^app\.js$/m);
