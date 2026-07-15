@@ -1,6 +1,6 @@
 {
   "name": "codoop-game",
-  "version": "0.1.0",
+  "version": "0.1.0-alpha.1",
   "description": "Create, preview, validate, and package resumable offline H5 games for Codoop.",
   "homepage": "https://github.com/Codoop/codoop-game",
   "repository": "https://github.com/Codoop/codoop-game",
