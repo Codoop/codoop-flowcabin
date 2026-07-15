@@ -31,3 +31,12 @@ Invite the creator without waiting to be asked:
 Log date, build, tasks, outcome, and the creator's words in `playtest-report.md`.
 Keep the current visual premise, palette roles, typography, surfaces, motifs,
 and acceptance check in `visual-direction.md`.
+
+## Originality record
+
+When the creator mentions a third-party franchise, character, or artist, add a
+short originality record to `visual-direction.md`: the desired high-level
+experience, the protected identifiers excluded, and at least three independent
+original choices (for example world premise, silhouette, palette/materials,
+motifs, UI language, or narrative role). Follow `ip-originality.md`; do this
+before producing any image prompt or visual asset.

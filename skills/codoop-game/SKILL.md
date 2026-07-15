@@ -12,8 +12,10 @@ make implementation decisions unless the creator faces a genuine gameplay choice
 
 1. Read `references/game-quality.md` and write a one-page game card in the
    game's `design-notes.md`. Create and complete `visual-direction.md` before
-   implementation. Ask at most one consequential question; otherwise state the
-   chosen default and proceed.
+   implementation. If the idea references a third-party IP, first apply the
+   originality gate in `references/ip-originality.md`; preserve only the
+   requested high-level experience, not recognizable expression. Ask at most
+   one consequential question; otherwise state the chosen default and proceed.
 2. Read `references/expert-orchestration.md`, then always load
    `../_shared/game-designer.md` and `../_shared/technical-artist.md`. Load
    each conditional expert named by that reference before implementation.
@@ -37,7 +39,8 @@ make implementation decisions unless the creator faces a genuine gameplay choice
    the result in `playtest-report.md`.
 7. On approval, get `cover.png` from the creator first. If they ask you to
    generate it or cannot provide it, use image generation with the technical
-   artist's art direction; save it separately as `dist/cover.png`.
+   artist's art direction and the originality gate; save it separately as
+   `dist/cover.png`.
 8. Re-read all triggered expert files for final approval. Run `validate-game`,
    `validate-cover`, then `package-game`; write results to
    `dist/validation-report.md`. Do not package if any gate fails.
@@ -54,6 +57,12 @@ make implementation decisions unless the creator faces a genuine gameplay choice
 - Do not ship generic demo styling. The first playable build needs a deliberate
   visual theme, hierarchy, typography, surfaces, state feedback, and authored
   game-world treatment as defined in `references/desktop-visual-design.md`.
+- AI or user-generated assets are not automatically safe to use. Do not copy,
+  trace, recreate, or prompt for a recognizable third-party character, logo,
+  title treatment, signature prop/costume combination, scene, or composition.
+  If a creator asks for a named IP or a near-copy, explain the constraint
+  briefly and produce a distinct, genre-level alternative using
+  `references/ip-originality.md`.
 - Harness validation is the current compatibility claim. Do not claim real
   Codoop Desktop validation until that E2E environment is available.
 
@@ -62,6 +71,7 @@ make implementation decisions unless the creator faces a genuine gameplay choice
 - `references/flow-cabin-api.md` — frozen host API and lifecycle.
 - `references/package-contract.md` — submission and offline restrictions.
 - `references/cover-contract.md` — creator-provided and generated cover rules.
+- `references/ip-originality.md` — third-party IP screening and original-art direction.
 - `references/desktop-visual-design.md` — desktop visual baseline and playtest prompts.
 - `references/expert-orchestration.md` — expert triggers and release gates.
 - `scripts/` — deterministic project creation, preview, validation, and zip packaging.
