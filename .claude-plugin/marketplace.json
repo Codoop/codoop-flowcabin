@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
+  "name": "codoop-game",
+  "description": "Create and package resumable offline H5 games for Codoop.",
+  "owner": {"name": "Codoop", "url": "https://github.com/Codoop"},
+  "plugins": [{
+    "name": "codoop-game",
+    "version": "0.1.0",
+    "source": ".",
+    "description": "Create, preview, validate, and package resumable offline H5 games for Codoop.",
+    "homepage": "https://github.com/Codoop/codoop-game",
+    "license": "MIT",
+    "keywords": ["games", "h5", "offline", "codoop"]
+  }]
+}

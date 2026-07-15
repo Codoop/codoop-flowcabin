@@ -1,0 +1,28 @@
+{
+  "name": "codoop-game",
+  "version": "0.1.0",
+  "description": "Create, preview, validate, and package resumable offline H5 games for Codoop.",
+  "author": {
+    "name": "Codoop",
+    "url": "https://github.com/Codoop"
+  },
+  "homepage": "https://github.com/Codoop/codoop-game",
+  "repository": "https://github.com/Codoop/codoop-game",
+  "license": "MIT",
+  "keywords": ["codoop", "games", "h5", "offline", "flow-cabin"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "codoop-game",
+    "shortDescription": "Create offline H5 games for Codoop",
+    "longDescription": "Turn a game idea into a playable, resumable offline H5 game and a validated Codoop submission package.",
+    "developerName": "Codoop",
+    "category": "Developer Tools",
+    "capabilities": ["Read", "Write", "Interactive"],
+    "websiteURL": "https://github.com/Codoop/codoop-game",
+    "defaultPrompt": [
+      "Use codoop-game to make a resumable farming game.",
+      "Use codoop-game to create an offline puzzle game for Codoop."
+    ],
+    "brandColor": "#1D4ED8"
+  }
+}
