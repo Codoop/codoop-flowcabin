@@ -11,8 +11,9 @@ make implementation decisions unless the creator faces a genuine gameplay choice
 ## Create loop
 
 1. Read `references/game-quality.md` and write a one-page game card in the
-   game's `design-notes.md`. Ask at most one consequential question; otherwise
-   state the chosen default and proceed.
+   game's `design-notes.md`. Create and complete `visual-direction.md` before
+   implementation. Ask at most one consequential question; otherwise state the
+   chosen default and proceed.
 2. Read `references/expert-orchestration.md`, then always load
    `../_shared/game-designer.md` and `../_shared/technical-artist.md`. Load
    each conditional expert named by that reference before implementation.
@@ -23,9 +24,9 @@ make implementation decisions unless the creator faces a genuine gameplay choice
    `references/desktop-visual-design.md`.
 4. Start `scripts/preview-harness.mjs <project>`, run lifecycle, resize, input,
    and offline checks, then **proactively invite a playtest**. Give the local
-   URL, three short player tasks, and one focused feedback question. Do not
-   begin another feature until the creator responds or explicitly asks to keep
-   going without a playtest.
+   URL, three short player tasks, and one focused feedback question. Log the
+   result in `playtest-report.md`. Do not begin another feature until the
+   creator responds or explicitly asks to keep going without a playtest.
 5. For each feedback round, write the changed hypothesis to `design-notes.md`,
    reload only the affected experts, implement one player-visible change, and
    preview again. Invite another playtest after a change to controls, pacing,
@@ -33,7 +34,7 @@ make implementation decisions unless the creator faces a genuine gameplay choice
    the creator to request it.
 6. Before final packaging, invite a short acceptance playtest that checks the
    first-minute experience, pause/resume, and return-from-save behavior. Record
-   the result in `design-notes.md`.
+   the result in `playtest-report.md`.
 7. On approval, get `cover.png` from the creator first. If they ask you to
    generate it or cannot provide it, use image generation with the technical
    artist's art direction; save it separately as `dist/cover.png`.

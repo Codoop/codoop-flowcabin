@@ -28,4 +28,6 @@ Invite the creator without waiting to be asked:
 3. **Acceptance** — before packaging, ask the creator to play the first minute,
    pause/resume, and reopen the game to confirm saved progress.
 
-Log date, build, tasks, outcome, and the creator's words in `design-notes.md`.
+Log date, build, tasks, outcome, and the creator's words in `playtest-report.md`.
+Keep the current visual premise, palette roles, typography, surfaces, motifs,
+and acceptance check in `visual-direction.md`.

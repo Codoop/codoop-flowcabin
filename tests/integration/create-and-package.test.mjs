@@ -18,6 +18,10 @@ test('creates a resumable canvas game and packages runtime files without its cov
   await access(join(project, 'app.js'));
   await access(join(project, 'styles.css'));
   await readFile(join(project, 'cover.png'));
+  const visualDirection = await readFile(join(project, 'visual-direction.md'), 'utf8');
+  const playtestReport = await readFile(join(project, 'playtest-report.md'), 'utf8');
+  assert.match(visualDirection, /Visual premise/);
+  assert.match(playtestReport, /Build/);
 
   const zip = await packageGame(project);
   await access(join(project, 'dist', 'cover.png'));

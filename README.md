@@ -98,6 +98,9 @@ dist/
 └── validation-report.md     # validation outcome written by the agent at delivery
 ```
 
+Each project also starts with `visual-direction.md` (art direction) and
+`playtest-report.md` (creator tasks, feedback, and next decision).
+
 ---
 
 ## Architecture

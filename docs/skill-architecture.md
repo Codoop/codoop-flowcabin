@@ -33,9 +33,10 @@ flowchart LR
 ## Creation and iteration
 
 1. **Game card** — the main Skill captures player goal, loop, controls, feedback, ending/continuation model, and the current change hypothesis in `design-notes.md`.
+   It also completes `visual-direction.md`, which keeps art direction stable across iterations.
 2. **Expert orchestration** — game design and technical art always participate. Maps or progression trigger level design; characters, story, or choices trigger narrative design; any sound triggers audio design.
 3. **First playable build** — `create-game.mjs` copies a Canvas or DOM starter into an independent project. The game uses only local resources and `window.FlowCabinGameAPI`.
-4. **Preview validation** — `preview-harness.mjs` serves the project, injects the minimal production API mock, and exposes desktop input, resize, pause, resume, and destroy controls. The Skill proactively gives the creator a URL and concrete playtest tasks.
+4. **Preview validation** — `preview-harness.mjs` serves the project, injects the minimal production API mock, and exposes desktop input, resize, pause, resume, and destroy controls. The Skill proactively gives the creator a URL and concrete playtest tasks, then records the result in `playtest-report.md`.
 5. **Feedback loop** — each iteration changes one player-visible experience. Game design scopes the request, then only affected experts are reloaded before implementation and another focused creator playtest.
 6. **Delivery gate** — after final approval from every triggered expert, game and cover validation run. `package-game.mjs` archives only runtime files in `game.zip` and copies the validated cover separately to `dist/cover.png`.
 

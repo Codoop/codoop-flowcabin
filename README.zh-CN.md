@@ -82,6 +82,8 @@ dist/
 └── validation-report.md     # 交付时由 agent 写入的验证结果
 ```
 
+每个项目还会从 `visual-direction.md`（美术方向）和 `playtest-report.md`（创作者试玩任务、反馈与下一步决定）开始。
+
 ---
 
 ## 架构

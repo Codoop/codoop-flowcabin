@@ -15,6 +15,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   build, material experience changes, and before final packaging.
 - Starters and technical-art rules now set a desktop-first, authored visual
   baseline; phone and touch-first requirements are out of scope.
+- New projects now include `visual-direction.md` and `playtest-report.md` to
+  keep art direction and creator feedback explicit across iterations.
 
 ## [0.1.0-alpha.1] - 2026-07-15
 

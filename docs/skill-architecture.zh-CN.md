@@ -32,10 +32,10 @@ flowchart LR
 
 ## 创建与迭代
 
-1. **游戏小卡**：主 Skill 将玩家目标、循环、操作、反馈、结束/续玩方式和当前改动假设写入 `design-notes.md`。
+1. **游戏小卡**：主 Skill 将玩家目标、循环、操作、反馈、结束/续玩方式和当前改动假设写入 `design-notes.md`，并完成 `visual-direction.md`，让每轮迭代保持一致的美术方向。
 2. **专家编排**：游戏设计师和技术美术固定参与。地图或进度触发关卡设计师；角色、剧情或选择触发叙事设计师；任何声音需求触发音频设计师。
 3. **首次可玩版本**：`create-game.mjs` 将 Canvas 或 DOM starter 复制到独立项目。游戏只使用本地资源和 `window.FlowCabinGameAPI`。
-4. **预览验证**：`preview-harness.mjs` 提供项目、注入最小生产 API mock，并暴露桌面输入、resize、pause、resume 和 destroy 控制。Skill 会主动给创作者 URL 和具体试玩任务。
+4. **预览验证**：`preview-harness.mjs` 提供项目、注入最小生产 API mock，并暴露桌面输入、resize、pause、resume 和 destroy 控制。Skill 会主动给创作者 URL 和具体试玩任务，并在 `playtest-report.md` 中记录结果。
 5. **反馈回路**：每轮只改一项玩家可感知的体验。游戏设计师先界定影响范围，再加载受影响专家、实现并邀请创作者进行针对性试玩。
 6. **交付门禁**：所有已触发专家最终放行后，运行游戏和封面校验。`package-game.mjs` 只把运行文件归档到 `game.zip`，并将验证通过的封面独立复制到 `dist/cover.png`。
 

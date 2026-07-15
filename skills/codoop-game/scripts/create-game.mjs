@@ -5,6 +5,60 @@ import { deflateSync } from 'node:zlib';
 
 const scriptDirectory = dirname(fileURLToPath(import.meta.url));
 const assetsDirectory = join(scriptDirectory, '..', 'assets');
+const visualDirectionTemplate = `# Visual Direction
+
+## Visual premise
+
+Describe the game world, mood, and the feeling a player should have in one sentence.
+
+## Palette roles
+
+- Background / atmosphere:
+- Primary surface:
+- Primary action:
+- Feedback / reward:
+- Warning / failure:
+
+## Typography and hierarchy
+
+- Display / title:
+- HUD / important state:
+- Body / instructions:
+- Metadata:
+
+## Surfaces and motifs
+
+Describe depth, borders, texture, light, and one theme-specific visual motif.
+
+## Acceptance check
+
+- [ ] The game does not look like a generic demo or default web UI.
+- [ ] Primary action, state, and feedback belong to one coherent art direction.
+`;
+const playtestReportTemplate = `# Playtest Report
+
+## Build
+
+- Date:
+- Build / preview URL:
+- Stage: first playable | material change | acceptance
+
+## Tasks
+
+1. Understand the goal without explanation.
+2. Complete the primary action.
+3. Pause, resume, and confirm progress remains.
+
+## Creator feedback
+
+- What felt clear, slow, unclear, or satisfying?
+
+## Observations and decision
+
+- Outcome:
+- Next single experience change:
+- Follow-up expert(s):
+`;
 
 function crc32(data) {
   let crc = 0xffffffff;
@@ -57,6 +111,8 @@ export async function createGame(workspace, name = 'my-codoop-game', { generateC
   const target = join(workspace, name);
   await mkdir(target, { recursive: true });
   await cp(join(assetsDirectory, `vanilla-${starter}-starter`), target, { recursive: true });
+  await writeFile(join(target, 'visual-direction.md'), visualDirectionTemplate);
+  await writeFile(join(target, 'playtest-report.md'), playtestReportTemplate);
   if (generateCover) await writeFile(join(target, 'cover.png'), defaultCover());
   return target;
 }
