@@ -4,7 +4,7 @@ import { dirname, join, sep } from 'node:path';
 import { deflateSync } from 'node:zlib';
 
 const scriptDirectory = dirname(fileURLToPath(import.meta.url));
-const starterDirectory = join(scriptDirectory, '..', 'assets', 'vanilla-canvas-starter');
+const assetsDirectory = join(scriptDirectory, '..', 'assets');
 
 function crc32(data) {
   let crc = 0xffffffff;
@@ -52,10 +52,11 @@ function defaultCover() {
   ]);
 }
 
-export async function createGame(workspace, name = 'my-codoop-game', { generateCover = false } = {}) {
+export async function createGame(workspace, name = 'my-codoop-game', { generateCover = false, starter = 'canvas' } = {}) {
+  if (!['canvas', 'dom'].includes(starter)) throw new Error(`Unknown starter: ${starter}`);
   const target = join(workspace, name);
   await mkdir(target, { recursive: true });
-  await cp(starterDirectory, target, { recursive: true });
+  await cp(join(assetsDirectory, `vanilla-${starter}-starter`), target, { recursive: true });
   if (generateCover) await writeFile(join(target, 'cover.png'), defaultCover());
   return target;
 }
@@ -63,7 +64,8 @@ export async function createGame(workspace, name = 'my-codoop-game', { generateC
 async function main() {
   const workspace = process.argv[2] ?? process.cwd();
   const name = process.argv[3] ?? 'my-codoop-game';
-  console.log(await createGame(workspace, name, { generateCover: process.argv.includes('--generate-cover') }));
+  const starter = process.argv.includes('--starter') ? process.argv[process.argv.indexOf('--starter') + 1] : 'canvas';
+  console.log(await createGame(workspace, name, { generateCover: process.argv.includes('--generate-cover'), starter }));
 }
 
 if (process.argv[1] && process.argv[1].split(sep).at(-1) === 'create-game.mjs') main();

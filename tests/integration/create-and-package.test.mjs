@@ -26,3 +26,10 @@ test('creates a resumable canvas game and packages runtime files without its cov
   assert.match(stdout, /^app\.js$/m);
   assert.doesNotMatch(stdout, /^cover\.png$/m);
 });
+
+test('can create the DOM starter when a game benefits from semantic UI', async () => {
+  const workspace = await mkdtemp(join(tmpdir(), 'codoop-dom-'));
+  const project = await createGame(workspace, 'market-ledger', { starter: 'dom' });
+  const html = await readFile(join(project, 'index.html'), 'utf8');
+  assert.match(html, /data-game-action/);
+});
