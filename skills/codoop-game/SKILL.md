@@ -27,13 +27,17 @@ make implementation decisions unless the creator faces a genuine gameplay choice
 4. Start `scripts/preview-harness.mjs <project>`, run lifecycle, resize, input,
    and offline checks, then **proactively invite a playtest**. Give the local
    URL, three short player tasks, and one focused feedback question. Log the
-   result in `playtest-report.md`. Do not begin another feature until the
-   creator responds or explicitly asks to keep going without a playtest.
+   result in `playtest-report.md`. Once a preview exists, end every
+   creator-facing reply with its current local playtest URL; do not wait for a
+   feedback request. Do not begin another feature until the creator responds
+   or explicitly asks to keep going without a playtest.
 5. For each feedback round, write the changed hypothesis to `design-notes.md`,
    reload only the affected experts, implement one player-visible change, and
-   preview again. Invite another playtest after a change to controls, pacing,
-   difficulty, visual hierarchy, feedback, or the core loop; do not wait for
-   the creator to request it.
+   preview again. In the reply for every round, provide the refreshed local
+   playtest URL, three short player tasks, and one focused feedback question.
+   Invite another playtest after a change to controls, pacing, difficulty,
+   visual hierarchy, feedback, or the core loop; do not wait for the creator
+   to request it.
 6. Before final packaging, invite a short acceptance playtest that checks the
    first-minute experience, pause/resume, and return-from-save behavior. Record
    the result in `playtest-report.md`.
@@ -65,6 +69,10 @@ make implementation decisions unless the creator faces a genuine gameplay choice
   `references/ip-originality.md`.
 - Harness validation is the current compatibility claim. Do not claim real
   Codoop Desktop validation until that E2E environment is available.
+- Before the first preview exists, state that a playtest link will follow the
+  first runnable build. After it exists, every creator-facing reply must include
+  the live local URL. If the harness restarts or its port changes, provide the
+  replacement URL immediately; never leave a stale link as the only entrypoint.
 
 ## Resources
 

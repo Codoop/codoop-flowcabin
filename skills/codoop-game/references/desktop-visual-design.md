@@ -19,6 +19,10 @@ control, and feedback state belong to it.
 
 Invite the creator without waiting to be asked:
 
+After the first runnable build, include the current preview URL in every
+creator-facing reply, even when the reply only reports progress or asks for a
+decision. Restart the preview harness when necessary and replace any stale URL.
+
 1. **First playable** — give the preview URL and ask them to complete three
    concrete tasks: understand the goal, perform the primary action, and pause
    then resume. Ask: “What felt unclear, slow, or surprisingly satisfying?”

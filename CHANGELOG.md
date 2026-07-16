@@ -7,6 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.0-alpha.3] - 2026-07-15
+
+### Added
+
+- An IP originality gate that preserves the requested genre or experience
+  while excluding recognizable third-party expression from game and cover art.
+
+### Changed
+
+- Once a runnable preview exists, every creator-facing response now includes
+  the current local playtest link, refreshed after every feedback round.
+
 ## [0.1.0-alpha.2] - 2026-07-15
 
 ### Changed
