@@ -3,7 +3,7 @@
 ## Codex
 
 ```bash
-codex plugin marketplace add Codoop/codoop-flow-cabin
+codex plugin marketplace add Codoop/codoop-flowcabin
 codex plugin add codoop-flow-cabin@codoop-flow-cabin
 ```
 
@@ -12,7 +12,7 @@ Restart Codex, invoke `$game`, and describe the game you want.
 ## Claude Code
 
 ```text
-/plugin marketplace add Codoop/codoop-flow-cabin
+/plugin marketplace add Codoop/codoop-flowcabin
 /plugin install codoop-flow-cabin@codoop-flow-cabin
 ```
 

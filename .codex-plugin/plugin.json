@@ -6,8 +6,8 @@
     "name": "Codoop",
     "url": "https://github.com/Codoop"
   },
-  "homepage": "https://github.com/Codoop/codoop-flow-cabin",
-  "repository": "https://github.com/Codoop/codoop-flow-cabin",
+  "homepage": "https://github.com/Codoop/codoop-flowcabin",
+  "repository": "https://github.com/Codoop/codoop-flowcabin",
   "license": "MIT",
   "keywords": ["codoop", "games", "h5", "offline", "flow-cabin"],
   "skills": "./skills/",
@@ -18,7 +18,7 @@
     "developerName": "Codoop",
     "category": "Developer Tools",
     "capabilities": ["Read", "Write", "Interactive"],
-    "websiteURL": "https://github.com/Codoop/codoop-flow-cabin",
+    "websiteURL": "https://github.com/Codoop/codoop-flowcabin",
     "defaultPrompt": [
       "Use $game to make a farming game for Flow Cabin.",
       "Use $game to create an offline puzzle game for Flow Cabin."

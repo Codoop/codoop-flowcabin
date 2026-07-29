@@ -48,7 +48,7 @@ the creator's coding workspace.
 ### Codex Desktop or CLI
 
 ```bash
-codex plugin marketplace add Codoop/codoop-flow-cabin
+codex plugin marketplace add Codoop/codoop-flowcabin
 codex plugin add codoop-flow-cabin@codoop-flow-cabin
 ```
 
@@ -61,7 +61,7 @@ Use $game to make a one-button lantern game for Flow Cabin.
 ### Claude Code
 
 ```text
-/plugin marketplace add Codoop/codoop-flow-cabin
+/plugin marketplace add Codoop/codoop-flowcabin
 /plugin install codoop-flow-cabin@codoop-flow-cabin
 ```
 
@@ -72,7 +72,7 @@ Then invoke:
 ```
 
 > No SSH key? Add the marketplace with the full HTTPS URL:
-> `https://github.com/Codoop/codoop-flow-cabin.git`
+> `https://github.com/Codoop/codoop-flowcabin.git`
 >
 > Local development: `claude --plugin-dir /path/to/codoop-flow-cabin`
 

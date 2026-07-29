@@ -45,7 +45,7 @@ flow-cabin-games/<game-id>/dist/<game-id>-<version>.zip
 ### Codex Desktop 或 CLI
 
 ```bash
-codex plugin marketplace add Codoop/codoop-flow-cabin
+codex plugin marketplace add Codoop/codoop-flowcabin
 codex plugin add codoop-flow-cabin@codoop-flow-cabin
 ```
 
@@ -58,7 +58,7 @@ codex plugin add codoop-flow-cabin@codoop-flow-cabin
 ### Claude Code
 
 ```text
-/plugin marketplace add Codoop/codoop-flow-cabin
+/plugin marketplace add Codoop/codoop-flowcabin
 /plugin install codoop-flow-cabin@codoop-flow-cabin
 ```
 
@@ -69,7 +69,7 @@ codex plugin add codoop-flow-cabin@codoop-flow-cabin
 ```
 
 > 没有 SSH Key 时，使用完整 HTTPS 地址添加 marketplace：
-> `https://github.com/Codoop/codoop-flow-cabin.git`
+> `https://github.com/Codoop/codoop-flowcabin.git`
 >
 > 本地开发：`claude --plugin-dir /path/to/codoop-flow-cabin`
 
