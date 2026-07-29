@@ -1,0 +1,13 @@
+{
+  "id": "star-catcher",
+  "title": "Star Catcher",
+  "version": "1.0.0",
+  "entry": "index.html",
+  "cover": "cover.svg",
+  "files": {
+    "cover.svg": "d7e6d4187d4e6fb41e99baaeffea1b8904a19e561ed7b91b55e758061a86db6a",
+    "game.js": "e26eb8efd4beade232d29a2a1234a03844fa5c6feb1c8daf1d1f8c45cd5c3e3c",
+    "index.html": "35c45c1e4bbb7ca52a38e8d5ff43349e85e1e77d2f643f58f044190aa9afa337",
+    "styles.css": "4987412e654c7a802a91193dd98da4d4d9af4b41b2ebd68be9b097a573ae6c30"
+  }
+}

@@ -1,27 +1,27 @@
 {
-  "name": "codoop-game",
-  "version": "0.1.0-alpha.3",
-  "description": "Create, preview, validate, and package resumable offline H5 games for Codoop.",
+  "name": "codoop-flow-cabin",
+  "version": "0.1.0-alpha.4",
+  "description": "Create, validate, and package editable offline games for Codoop Flow Cabin.",
   "author": {
     "name": "Codoop",
     "url": "https://github.com/Codoop"
   },
-  "homepage": "https://github.com/Codoop/codoop-game",
-  "repository": "https://github.com/Codoop/codoop-game",
+  "homepage": "https://github.com/Codoop/codoop-flow-cabin",
+  "repository": "https://github.com/Codoop/codoop-flow-cabin",
   "license": "MIT",
   "keywords": ["codoop", "games", "h5", "offline", "flow-cabin"],
   "skills": "./skills/",
   "interface": {
-    "displayName": "codoop-game",
-    "shortDescription": "Create offline H5 games for Codoop",
-    "longDescription": "Turn a game idea into a playable, resumable offline H5 game and a validated Codoop submission package.",
+    "displayName": "codoop-flow-cabin",
+    "shortDescription": "Create offline games for Flow Cabin",
+    "longDescription": "Turn a game idea into editable source and an import-ready Codoop Flow Cabin ZIP.",
     "developerName": "Codoop",
     "category": "Developer Tools",
     "capabilities": ["Read", "Write", "Interactive"],
-    "websiteURL": "https://github.com/Codoop/codoop-game",
+    "websiteURL": "https://github.com/Codoop/codoop-flow-cabin",
     "defaultPrompt": [
-      "Use codoop-game to make a resumable farming game.",
-      "Use codoop-game to create an offline puzzle game for Codoop."
+      "Use $game to make a farming game for Flow Cabin.",
+      "Use $game to create an offline puzzle game for Flow Cabin."
     ],
     "brandColor": "#1D4ED8"
   }

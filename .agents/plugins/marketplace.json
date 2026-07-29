@@ -1,8 +1,8 @@
 {
-  "name": "codoop-game",
-  "interface": {"displayName": "codoop-game"},
+  "name": "codoop-flow-cabin",
+  "interface": {"displayName": "codoop-flow-cabin"},
   "plugins": [{
-    "name": "codoop-game",
+    "name": "codoop-flow-cabin",
     "source": {"source": "local", "path": "."},
     "policy": {"installation": "AVAILABLE", "authentication": "ON_INSTALL"},
     "category": "Developer Tools"

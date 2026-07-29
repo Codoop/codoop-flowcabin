@@ -1,14 +1,14 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
-  "name": "codoop-game",
-  "description": "Create and package resumable offline H5 games for Codoop.",
+  "name": "codoop-flow-cabin",
+  "description": "Create and package editable offline games for Codoop Flow Cabin.",
   "owner": {"name": "Codoop", "url": "https://github.com/Codoop"},
   "plugins": [{
-    "name": "codoop-game",
-    "version": "0.1.0-alpha.3",
+    "name": "codoop-flow-cabin",
+    "version": "0.1.0-alpha.4",
     "source": ".",
-    "description": "Create, preview, validate, and package resumable offline H5 games for Codoop.",
-    "homepage": "https://github.com/Codoop/codoop-game",
+    "description": "Create, validate, and package editable offline games for Codoop Flow Cabin.",
+    "homepage": "https://github.com/Codoop/codoop-flow-cabin",
     "license": "MIT",
     "keywords": ["games", "h5", "offline", "codoop"]
   }]

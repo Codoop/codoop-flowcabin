@@ -1,6 +1,0 @@
-interface:
-  display_name: "Codoop Game"
-  short_description: "Create a resumable offline Codoop game"
-  default_prompt: "Use $codoop-game to create a playable offline game from my idea."
-policy:
-  allow_implicit_invocation: true

@@ -1,11 +1,40 @@
 # Changelog
 
-All notable changes to codoop-game are documented in this file.
+All notable changes to codoop-flow-cabin are documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+## [0.1.0-alpha.4] - 2026-07-29
+
+### Added
+
+- Initial `$game` Skill for turning a natural-language game idea into editable,
+  offline HTML, CSS, and JavaScript source for Flow Cabin.
+- Bounded game-designer and technical-artist Sub-Agent reviews, with
+  level-designer and narrative-designer roles loaded only when needed. The main
+  agent remains the sole owner of generated file edits.
+- A deterministic, zero-dependency project initializer that writes new games to
+  `<workspace>/flow-cabin-games/<game-id>/`, refuses to overwrite existing
+  projects, and prevents writes inside the installed Skill directory.
+- A fixed generated-project contract with editable runtime source under
+  `package/` and release artifacts under `dist/`.
+- A Python standard-library packager that generates and verifies SHA-256
+  manifest entries and produces import-ready ZIP files.
+- Package safety checks for traversal, hidden paths, symbolic links, unsupported
+  file types, missing local resources, remote URLs, network APIs, iframes,
+  dynamic imports, Node/Electron APIs, invalid entry points, and size limits.
+- A responsive vanilla game starter with keyboard and pointer input, local
+  progress, browser-safe lifecycle fallback, and optional
+  `window.FlowCabinGame.onPause/onResume` integration.
+- Codex and Claude Code plugin manifests plus GitHub marketplace metadata.
+- English and Simplified Chinese README documentation, installation guidance,
+  output-contract references, and an MIT license.
+- Automated tests covering project initialization, output placement, package
+  layout, hashes, offline restrictions, unsafe paths, resource validation, and
+  package limits.
 
 ## [0.1.0-alpha.3] - 2026-07-15
 
