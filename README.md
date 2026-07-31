@@ -1,6 +1,6 @@
 <div align="center">
 
-# codoop-flow-cabin
+# codoop-flowcabin
 
 **English** · [简体中文](./README.zh-CN.md)
 
@@ -14,7 +14,7 @@
 
 </div>
 
-**codoop-flow-cabin** is an open-source Coding Agent plugin for creating small,
+**codoop-flowcabin** is an open-source Coding Agent plugin for creating small,
 offline Flow Cabin games from plain-language ideas.
 
 The agent handles game design, visual direction, implementation, browser
@@ -49,20 +49,20 @@ the creator's coding workspace.
 
 ```bash
 codex plugin marketplace add Codoop/codoop-flowcabin
-codex plugin add codoop-flow-cabin@codoop-flow-cabin
+codex plugin add codoop-flowcabin@codoop-flowcabin
 ```
 
 Restart or reopen Codex, then say:
 
 ```text
-Use $game to make a one-button lantern game for Flow Cabin.
+Use $codoop-flowcabin:game to make a one-button lantern game for Flow Cabin.
 ```
 
 ### Claude Code
 
 ```text
 /plugin marketplace add Codoop/codoop-flowcabin
-/plugin install codoop-flow-cabin@codoop-flow-cabin
+/plugin install codoop-flowcabin@codoop-flowcabin
 ```
 
 Then invoke:
@@ -74,7 +74,7 @@ Then invoke:
 > No SSH key? Add the marketplace with the full HTTPS URL:
 > `https://github.com/Codoop/codoop-flowcabin.git`
 >
-> Local development: `claude --plugin-dir /path/to/codoop-flow-cabin`
+> Local development: `claude --plugin-dir /path/to/codoop-flowcabin`
 
 **Prerequisite:** Python 3.9 or newer. The generated games and packaging tools
 have no third-party runtime dependencies.
@@ -86,7 +86,7 @@ have no third-party runtime dependencies.
 Describe the game, controls, and mood in one request:
 
 ```text
-Use $game to make a desktop game where I steer a moon rover left and right,
+Use $codoop-flowcabin:game to make a desktop game where I steer a moon rover left and right,
 collect blue crystals, and avoid orange rocks.
 ```
 
@@ -209,7 +209,7 @@ python3 skills/game/scripts/flow_cabin_package.py validate \
 ## Repository layout
 
 ```text
-codoop-flow-cabin/
+codoop-flowcabin/
 ├── .agents/plugins/marketplace.json
 ├── .claude-plugin/
 │   ├── marketplace.json

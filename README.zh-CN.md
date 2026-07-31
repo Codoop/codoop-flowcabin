@@ -1,6 +1,6 @@
 <div align="center">
 
-# codoop-flow-cabin
+# codoop-flowcabin
 
 [English](./README.md) · **简体中文**
 
@@ -14,7 +14,7 @@
 
 </div>
 
-**codoop-flow-cabin** 是一个开源 Coding Agent 插件，用自然语言创建小型、
+**codoop-flowcabin** 是一个开源 Coding Agent 插件，用自然语言创建小型、
 离线、可编辑的 Flow Cabin 游戏。
 
 Agent 负责游戏设计、视觉方向、实现、浏览器试玩和迭代；确定性 Python
@@ -46,20 +46,20 @@ flow-cabin-games/<game-id>/dist/<game-id>-<version>.zip
 
 ```bash
 codex plugin marketplace add Codoop/codoop-flowcabin
-codex plugin add codoop-flow-cabin@codoop-flow-cabin
+codex plugin add codoop-flowcabin@codoop-flowcabin
 ```
 
 重启或重新打开 Codex，然后说：
 
 ```text
-使用 $game，帮我做一个单键操作的 Flow Cabin 提灯小游戏。
+使用 $codoop-flowcabin:game，帮我做一个单键操作的 Flow Cabin 提灯小游戏。
 ```
 
 ### Claude Code
 
 ```text
 /plugin marketplace add Codoop/codoop-flowcabin
-/plugin install codoop-flow-cabin@codoop-flow-cabin
+/plugin install codoop-flowcabin@codoop-flowcabin
 ```
 
 然后调用：
@@ -71,7 +71,7 @@ codex plugin add codoop-flow-cabin@codoop-flow-cabin
 > 没有 SSH Key 时，使用完整 HTTPS 地址添加 marketplace：
 > `https://github.com/Codoop/codoop-flowcabin.git`
 >
-> 本地开发：`claude --plugin-dir /path/to/codoop-flow-cabin`
+> 本地开发：`claude --plugin-dir /path/to/codoop-flowcabin`
 
 **环境要求：** Python 3.9 或更高版本。游戏运行与打包工具均无第三方依赖。
 
@@ -82,7 +82,7 @@ codex plugin add codoop-flow-cabin@codoop-flow-cabin
 用一句话描述玩法、操作和氛围：
 
 ```text
-使用 $game，做一个桌面小游戏：左右驾驶月球车，收集蓝色水晶，躲避橙色岩石。
+使用 $codoop-flowcabin:game，做一个桌面小游戏：左右驾驶月球车，收集蓝色水晶，躲避橙色岩石。
 ```
 
 Skill 会：
@@ -196,7 +196,7 @@ python3 skills/game/scripts/flow_cabin_package.py validate \
 ## 仓库结构
 
 ```text
-codoop-flow-cabin/
+codoop-flowcabin/
 ├── .agents/plugins/marketplace.json
 ├── .claude-plugin/
 │   ├── marketplace.json

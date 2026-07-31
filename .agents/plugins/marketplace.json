@@ -1,8 +1,8 @@
 {
-  "name": "codoop-flow-cabin",
-  "interface": {"displayName": "codoop-flow-cabin"},
+  "name": "codoop-flowcabin",
+  "interface": {"displayName": "codoop-flowcabin"},
   "plugins": [{
-    "name": "codoop-flow-cabin",
+    "name": "codoop-flowcabin",
     "source": {"source": "local", "path": "."},
     "policy": {"installation": "AVAILABLE", "authentication": "ON_INSTALL"},
     "category": "Developer Tools"

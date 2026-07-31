@@ -1,10 +1,10 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
-  "name": "codoop-flow-cabin",
+  "name": "codoop-flowcabin",
   "description": "Create and package editable offline games for Codoop Flow Cabin.",
   "owner": {"name": "Codoop", "url": "https://github.com/Codoop"},
   "plugins": [{
-    "name": "codoop-flow-cabin",
+    "name": "codoop-flowcabin",
     "version": "0.1.0-alpha.4",
     "source": ".",
     "description": "Create, validate, and package editable offline games for Codoop Flow Cabin.",

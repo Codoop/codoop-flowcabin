@@ -1,4 +1,4 @@
 interface:
   display_name: "Game"
   short_description: "Build and package offline Flow Cabin games"
-  default_prompt: "Use $game to create a polished offline Flow Cabin game from my idea."
+  default_prompt: "Use $codoop-flowcabin:game to create a polished offline Flow Cabin game from my idea."

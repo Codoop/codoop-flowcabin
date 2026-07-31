@@ -2,7 +2,7 @@
 
 ## 目标
 
-新建独立 Codex 插件项目 `codoop-flow-cabin`。用户描述一个小游戏后，Skill 创建可编辑的纯 HTML/CSS/JavaScript 游戏源码，校验并打包为可直接导入 Flow Cabin 的 ZIP。
+新建独立 Codex 插件项目 `codoop-flowcabin`。用户描述一个小游戏后，Skill 创建可编辑的纯 HTML/CSS/JavaScript 游戏源码，校验并打包为可直接导入 Flow Cabin 的 ZIP。
 
 v1 仅支持游戏；以后可在不改变包安全契约的前提下扩展为其他工具。
 
@@ -98,7 +98,7 @@ flowchart TD
 ## 项目结构
 
 ```text
-codoop-flow-cabin/
+codoop-flowcabin/
 ├── .codex-plugin/plugin.json
 ├── .claude-plugin/plugin.json
 ├── skills/game/

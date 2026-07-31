@@ -4,16 +4,16 @@
 
 ```bash
 codex plugin marketplace add Codoop/codoop-flowcabin
-codex plugin add codoop-flow-cabin@codoop-flow-cabin
+codex plugin add codoop-flowcabin@codoop-flowcabin
 ```
 
-Restart Codex, invoke `$game`, and describe the game you want.
+Restart Codex, invoke `$codoop-flowcabin:game`, and describe the game you want.
 
 ## Claude Code
 
 ```text
 /plugin marketplace add Codoop/codoop-flowcabin
-/plugin install codoop-flow-cabin@codoop-flow-cabin
+/plugin install codoop-flowcabin@codoop-flowcabin
 ```
 
 For local development, validate and load the checkout for one session:
