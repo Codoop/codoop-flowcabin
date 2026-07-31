@@ -152,6 +152,32 @@ class PackageTests(unittest.TestCase):
 
 
 class SkillStructureTests(unittest.TestCase):
+    def test_plugin_release_metadata_is_consistent(self):
+        codex = json.loads((ROOT / ".codex-plugin" / "plugin.json").read_text())
+        claude = json.loads((ROOT / ".claude-plugin" / "plugin.json").read_text())
+        claude_market = json.loads(
+            (ROOT / ".claude-plugin" / "marketplace.json").read_text()
+        )
+        codex_market = json.loads(
+            (ROOT / ".agents" / "plugins" / "marketplace.json").read_text()
+        )
+        name, version = codex["name"], codex["version"]
+        self.assertEqual(name, "codoop-flowcabin")
+        self.assertEqual(claude["name"], name)
+        self.assertEqual(claude["version"], version)
+        self.assertEqual(claude_market["name"], name)
+        self.assertEqual(claude_market["plugins"][0]["name"], name)
+        self.assertEqual(claude_market["plugins"][0]["version"], version)
+        self.assertEqual(codex_market["name"], name)
+        self.assertEqual(codex_market["plugins"][0]["name"], name)
+        self.assertTrue(
+            all(
+                f"${name}:game" in prompt
+                for prompt in codex["interface"]["defaultPrompt"]
+            )
+        )
+        self.assertIn(f"## [{version}]", (ROOT / "CHANGELOG.md").read_text())
+
     def test_expert_roles_are_linked_and_present(self):
         skill = (ROOT / "skills" / "game" / "SKILL.md").read_text()
         self.assertIn("references/expert-orchestration.md", skill)

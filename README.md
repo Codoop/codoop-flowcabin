@@ -58,6 +58,18 @@ Restart or reopen Codex, then say:
 Use $codoop-flowcabin:game to make a one-button lantern game for Flow Cabin.
 ```
 
+#### Upgrading from alpha.4 with Codex
+
+Alpha.5 changes the plugin identity from `codoop-flow-cabin` to match the
+repository name. Remove the old identity before installing the new one:
+
+```bash
+codex plugin remove codoop-flow-cabin@codoop-flow-cabin
+codex plugin marketplace remove codoop-flow-cabin
+codex plugin marketplace add Codoop/codoop-flowcabin
+codex plugin add codoop-flowcabin@codoop-flowcabin
+```
+
 ### Claude Code
 
 ```text
@@ -68,7 +80,16 @@ Use $codoop-flowcabin:game to make a one-button lantern game for Flow Cabin.
 Then invoke:
 
 ```text
-/game Make a small keyboard-controlled space game.
+/codoop-flowcabin:game Make a small keyboard-controlled space game.
+```
+
+#### Upgrading from alpha.4 with Claude Code
+
+```text
+/plugin uninstall codoop-flow-cabin@codoop-flow-cabin
+/plugin marketplace remove codoop-flow-cabin
+/plugin marketplace add Codoop/codoop-flowcabin
+/plugin install codoop-flowcabin@codoop-flowcabin
 ```
 
 > No SSH key? Add the marketplace with the full HTTPS URL:

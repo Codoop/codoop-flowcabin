@@ -7,6 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.0-alpha.5] - 2026-07-31
+
+### Changed
+
+- The plugin and marketplace identity now matches the repository name,
+  changing the Codex Skill invocation to `$codoop-flowcabin:game`.
+- Codex and Claude installation examples now use
+  `codoop-flowcabin@codoop-flowcabin` consistently.
+- English and Simplified Chinese installation docs now explain how alpha.4
+  users can remove the old plugin identity before installing alpha.5.
+
 ## [0.1.0-alpha.4] - 2026-07-29
 
 ### Added

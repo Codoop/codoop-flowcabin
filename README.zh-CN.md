@@ -55,6 +55,18 @@ codex plugin add codoop-flowcabin@codoop-flowcabin
 使用 $codoop-flowcabin:game，帮我做一个单键操作的 Flow Cabin 提灯小游戏。
 ```
 
+#### 使用 Codex 从 alpha.4 升级
+
+alpha.5 将插件标识从 `codoop-flow-cabin` 改为与仓库名一致。
+安装新版前先移除旧标识：
+
+```bash
+codex plugin remove codoop-flow-cabin@codoop-flow-cabin
+codex plugin marketplace remove codoop-flow-cabin
+codex plugin marketplace add Codoop/codoop-flowcabin
+codex plugin add codoop-flowcabin@codoop-flowcabin
+```
+
 ### Claude Code
 
 ```text
@@ -65,7 +77,16 @@ codex plugin add codoop-flowcabin@codoop-flowcabin
 然后调用：
 
 ```text
-/game 帮我做一个键盘操作的小型太空游戏。
+/codoop-flowcabin:game 帮我做一个键盘操作的小型太空游戏。
+```
+
+#### 使用 Claude Code 从 alpha.4 升级
+
+```text
+/plugin uninstall codoop-flow-cabin@codoop-flow-cabin
+/plugin marketplace remove codoop-flow-cabin
+/plugin marketplace add Codoop/codoop-flowcabin
+/plugin install codoop-flowcabin@codoop-flowcabin
 ```
 
 > 没有 SSH Key 时，使用完整 HTTPS 地址添加 marketplace：

@@ -1,7 +1,11 @@
 {
   "name": "codoop-flowcabin",
-  "version": "0.1.0-alpha.4",
+  "version": "0.1.0-alpha.5",
   "description": "Create, validate, and package editable offline games for Codoop Flow Cabin.",
+  "author": {
+    "name": "Codoop",
+    "url": "https://github.com/Codoop"
+  },
   "homepage": "https://github.com/Codoop/codoop-flowcabin",
   "repository": "https://github.com/Codoop/codoop-flowcabin",
   "license": "MIT"

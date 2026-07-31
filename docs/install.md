@@ -9,6 +9,18 @@ codex plugin add codoop-flowcabin@codoop-flowcabin
 
 Restart Codex, invoke `$codoop-flowcabin:game`, and describe the game you want.
 
+### Upgrade from alpha.4 with Codex
+
+Alpha.5 renamed the plugin identity. Remove the old identity before installing
+the new one:
+
+```bash
+codex plugin remove codoop-flow-cabin@codoop-flow-cabin
+codex plugin marketplace remove codoop-flow-cabin
+codex plugin marketplace add Codoop/codoop-flowcabin
+codex plugin add codoop-flowcabin@codoop-flowcabin
+```
+
 ## Claude Code
 
 ```text
@@ -23,7 +35,16 @@ claude plugin validate .
 claude --plugin-dir .
 ```
 
-Then invoke `/game`.
+Then invoke `/codoop-flowcabin:game`.
+
+### Upgrade from alpha.4 with Claude Code
+
+```text
+/plugin uninstall codoop-flow-cabin@codoop-flow-cabin
+/plugin marketplace remove codoop-flow-cabin
+/plugin marketplace add Codoop/codoop-flowcabin
+/plugin install codoop-flowcabin@codoop-flowcabin
+```
 
 ## Generated projects
 
