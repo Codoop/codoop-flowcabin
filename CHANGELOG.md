@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.0-alpha.6] - 2026-07-31
+
+### Fixed
+
+- Show the Codex Skill as `/Codoop Flowcabin: Game` by using the plugin display
+  name and removing the per-Skill UI override that reduced it to `$game`.
+- Remove self-referential Skill mentions from Codex starter prompts.
+
 ## [0.1.0-alpha.5] - 2026-07-31
 
 ### Changed

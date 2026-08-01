@@ -49,10 +49,10 @@ codex plugin marketplace add Codoop/codoop-flowcabin
 codex plugin add codoop-flowcabin@codoop-flowcabin
 ```
 
-重启或重新打开 Codex，然后说：
+重启或重新打开 Codex，选择 `/Codoop Flowcabin: Game`，然后说：
 
 ```text
-使用 $codoop-flowcabin:game，帮我做一个单键操作的 Flow Cabin 提灯小游戏。
+帮我做一个单键操作的 Flow Cabin 提灯小游戏。
 ```
 
 #### 使用 Codex 从 alpha.4 升级
@@ -103,7 +103,7 @@ codex plugin add codoop-flowcabin@codoop-flowcabin
 用一句话描述玩法、操作和氛围：
 
 ```text
-使用 $codoop-flowcabin:game，做一个桌面小游戏：左右驾驶月球车，收集蓝色水晶，躲避橙色岩石。
+/Codoop Flowcabin: Game 做一个桌面小游戏：左右驾驶月球车，收集蓝色水晶，躲避橙色岩石。
 ```
 
 Skill 会：
@@ -227,7 +227,6 @@ codoop-flowcabin/
 │   ├── _shared/                 # 专家评审角色
 │   └── game/
 │       ├── SKILL.md             # Agent 编排流程
-│       ├── agents/openai.yaml
 │       ├── references/          # 输出、运行时、包和评审契约
 │       ├── scripts/             # 确定性初始化器和打包器
 │       └── templates/           # 可编辑原生模板

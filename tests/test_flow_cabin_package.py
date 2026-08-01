@@ -170,11 +170,15 @@ class SkillStructureTests(unittest.TestCase):
         self.assertEqual(claude_market["plugins"][0]["version"], version)
         self.assertEqual(codex_market["name"], name)
         self.assertEqual(codex_market["plugins"][0]["name"], name)
+        self.assertEqual(codex["interface"]["displayName"], "Codoop Flowcabin")
+        self.assertEqual(
+            codex_market["interface"]["displayName"], "Codoop Flowcabin"
+        )
         self.assertTrue(
-            all(
-                f"${name}:game" in prompt
-                for prompt in codex["interface"]["defaultPrompt"]
-            )
+            all("$" not in prompt for prompt in codex["interface"]["defaultPrompt"])
+        )
+        self.assertFalse(
+            (ROOT / "skills" / "game" / "agents" / "openai.yaml").exists()
         )
         self.assertIn(f"## [{version}]", (ROOT / "CHANGELOG.md").read_text())
 

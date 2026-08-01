@@ -1,6 +1,6 @@
 {
   "name": "codoop-flowcabin",
-  "version": "0.1.0-alpha.5",
+  "version": "0.1.0-alpha.6",
   "description": "Create, validate, and package editable offline games for Codoop Flow Cabin.",
   "author": {
     "name": "Codoop",
@@ -12,7 +12,7 @@
   "keywords": ["codoop", "games", "h5", "offline", "flow-cabin"],
   "skills": "./skills/",
   "interface": {
-    "displayName": "codoop-flowcabin",
+    "displayName": "Codoop Flowcabin",
     "shortDescription": "Create offline games for Flow Cabin",
     "longDescription": "Turn a game idea into editable source and an import-ready Codoop Flow Cabin ZIP.",
     "developerName": "Codoop",
@@ -20,8 +20,8 @@
     "capabilities": ["Read", "Write", "Interactive"],
     "websiteURL": "https://github.com/Codoop/codoop-flowcabin",
     "defaultPrompt": [
-      "Use $codoop-flowcabin:game to make a farming game for Flow Cabin.",
-      "Use $codoop-flowcabin:game to create an offline puzzle game for Flow Cabin."
+      "Make a farming game for Flow Cabin.",
+      "Create an offline puzzle game for Flow Cabin."
     ],
     "brandColor": "#1D4ED8"
   }

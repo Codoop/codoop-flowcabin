@@ -1,6 +1,6 @@
 {
   "name": "codoop-flowcabin",
-  "interface": {"displayName": "codoop-flowcabin"},
+  "interface": {"displayName": "Codoop Flowcabin"},
   "plugins": [{
     "name": "codoop-flowcabin",
     "source": {"source": "local", "path": "."},

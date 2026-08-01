@@ -5,7 +5,7 @@
   "owner": {"name": "Codoop", "url": "https://github.com/Codoop"},
   "plugins": [{
     "name": "codoop-flowcabin",
-    "version": "0.1.0-alpha.5",
+    "version": "0.1.0-alpha.6",
     "source": ".",
     "description": "Create, validate, and package editable offline games for Codoop Flow Cabin.",
     "homepage": "https://github.com/Codoop/codoop-flowcabin",

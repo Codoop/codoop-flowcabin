@@ -7,7 +7,7 @@ codex plugin marketplace add Codoop/codoop-flowcabin
 codex plugin add codoop-flowcabin@codoop-flowcabin
 ```
 
-Restart Codex, invoke `$codoop-flowcabin:game`, and describe the game you want.
+Restart Codex, choose `/Codoop Flowcabin: Game`, and describe the game you want.
 
 ### Upgrade from alpha.4 with Codex
 

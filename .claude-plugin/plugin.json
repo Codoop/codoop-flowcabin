@@ -1,6 +1,6 @@
 {
   "name": "codoop-flowcabin",
-  "version": "0.1.0-alpha.5",
+  "version": "0.1.0-alpha.6",
   "description": "Create, validate, and package editable offline games for Codoop Flow Cabin.",
   "author": {
     "name": "Codoop",

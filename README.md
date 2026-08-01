@@ -52,10 +52,10 @@ codex plugin marketplace add Codoop/codoop-flowcabin
 codex plugin add codoop-flowcabin@codoop-flowcabin
 ```
 
-Restart or reopen Codex, then say:
+Restart or reopen Codex, choose `/Codoop Flowcabin: Game`, then say:
 
 ```text
-Use $codoop-flowcabin:game to make a one-button lantern game for Flow Cabin.
+Make a one-button lantern game for Flow Cabin.
 ```
 
 #### Upgrading from alpha.4 with Codex
@@ -107,7 +107,7 @@ have no third-party runtime dependencies.
 Describe the game, controls, and mood in one request:
 
 ```text
-Use $codoop-flowcabin:game to make a desktop game where I steer a moon rover left and right,
+/Codoop Flowcabin: Game Make a desktop game where I steer a moon rover left and right,
 collect blue crystals, and avoid orange rocks.
 ```
 
@@ -240,7 +240,6 @@ codoop-flowcabin/
 │   ├── _shared/                 # expert review roles
 │   └── game/
 │       ├── SKILL.md             # agent orchestration
-│       ├── agents/openai.yaml
 │       ├── references/          # output, runtime, package, and review contracts
 │       ├── scripts/             # deterministic initializer and packager
 │       └── templates/           # editable vanilla starter
