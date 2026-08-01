@@ -7,6 +7,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.0-alpha.7] - 2026-08-01
+
+### Changed
+
+- Flow Cabin games now target the host's `420 × 560` (`3:4`) game stage and
+  resize with the available workspace height without size caps or vertical
+  centering.
+- The vanilla starter now fills the game stage with a `3:4` canvas and keeps
+  its HUD, pointer input, and gameplay coordinates aligned at every resize.
+
+### Added
+
+- Document the `420 × 600` Flow Cabin frame, `420 × 40` top bar, scaling
+  formulas, and host alignment contract for generated games.
+
 ## [0.1.0-alpha.6] - 2026-07-31
 
 ### Fixed
