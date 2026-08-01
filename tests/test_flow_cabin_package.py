@@ -195,6 +195,17 @@ class SkillStructureTests(unittest.TestCase):
             self.assertTrue((shared / name).is_file(), name)
         self.assertFalse((shared / "SKILL.md").exists())
 
+    def test_starter_matches_flow_cabin_stage(self):
+        template = ROOT / "skills" / "game" / "templates" / "vanilla-game"
+        html = (template / "index.html").read_text()
+        css = (template / "styles.css").read_text()
+        runtime = (ROOT / "skills" / "game" / "references" / "runtime-api.md").read_text()
+        self.assertIn('width="420" height="560"', html)
+        self.assertIn("workspaceAvailableHeight / 600", runtime)
+        self.assertNotIn("min-width", css)
+        self.assertNotIn("place-items: center", css)
+        self.assertNotIn("aspect-ratio: 16 / 9", css)
+
 
 class ProjectLayoutTests(unittest.TestCase):
     def test_initializer_creates_standard_project_and_packages_it(self):

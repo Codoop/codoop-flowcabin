@@ -8,25 +8,25 @@
 </head>
 <body>
   <main class="shell">
-    <header>
-      <div>
-        <p class="eyebrow">FLOW CABIN ARCADE</p>
-        <h1>Star Catcher</h1>
-      </div>
-      <dl aria-label="Game status">
-        <div><dt>Score</dt><dd id="score">0</dd></div>
-        <div><dt>Best</dt><dd id="best">0</dd></div>
-      </dl>
-    </header>
     <section class="stage-wrap" aria-label="Star Catcher game">
-      <canvas id="game" width="960" height="540" tabindex="0"></canvas>
+      <canvas id="game" width="420" height="560" tabindex="0"></canvas>
+      <header>
+        <div>
+          <p class="eyebrow">FLOW CABIN ARCADE</p>
+          <h1>Star Catcher</h1>
+        </div>
+        <dl aria-label="Game status">
+          <div><dt>Score</dt><dd id="score">0</dd></div>
+          <div><dt>Best</dt><dd id="best">0</dd></div>
+        </dl>
+      </header>
       <div id="overlay" class="overlay">
         <h2 id="message">Catch the falling light</h2>
         <p>Move with A/D or ←/→. Point and click to dash.</p>
         <button id="start" type="button">Start run</button>
       </div>
+      <p class="hint">Space pauses · R restarts · avoid red debris</p>
     </section>
-    <p class="hint">Space pauses · R restarts · avoid red debris</p>
   </main>
   <script src="game.js"></script>
 </body>

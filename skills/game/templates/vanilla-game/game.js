@@ -8,7 +8,7 @@ const startButton = document.querySelector("#start");
 const scoreNode = document.querySelector("#score");
 const bestNode = document.querySelector("#best");
 const keys = new Set();
-const player = { x: 480, y: 485, width: 92, height: 18 };
+const player = { x: 210, y: 505, width: 64, height: 12 };
 let objects = [];
 let score = 0;
 let best = Number(localStorage.getItem("star-catcher-best") || 0);
@@ -69,10 +69,10 @@ function refreshPauseState() {
 function spawn() {
   const danger = Math.random() < Math.min(.18 + score / 180, .42);
   objects.push({
-    x: 30 + Math.random() * (canvas.width - 60),
-    y: -24,
-    radius: danger ? 16 : 11,
-    speed: 150 + Math.random() * 110 + score * 2,
+    x: 18 + Math.random() * (canvas.width - 36),
+    y: -16,
+    radius: danger ? 11 : 8,
+    speed: 105 + Math.random() * 75 + score * 1.5,
     danger
   });
 }
@@ -83,7 +83,7 @@ function update(seconds) {
     Number(keys.has("KeyA") || keys.has("ArrowLeft"));
   player.x = Math.max(
     player.width / 2,
-    Math.min(canvas.width - player.width / 2, player.x + direction * 460 * seconds)
+    Math.min(canvas.width - player.width / 2, player.x + direction * 260 * seconds)
   );
   if (Math.random() < seconds * 1.55) spawn();
   for (const item of objects) item.y += item.speed * seconds;
@@ -112,7 +112,7 @@ function draw() {
   context.fillStyle = gradient;
   context.fillRect(0, 0, canvas.width, canvas.height);
   context.fillStyle = "#25345f";
-  for (let x = 40; x < canvas.width; x += 88) context.fillRect(x, 80, 2, 2);
+  for (let x = 20; x < canvas.width; x += 44) context.fillRect(x, 80, 2, 2);
   for (const item of objects) {
     context.beginPath();
     context.arc(item.x, item.y, item.radius, 0, Math.PI * 2);

@@ -31,15 +31,20 @@ editable HTML, CSS, JavaScript, SVG, PNG, WebP, and JSON files.
    Use another output root only when the creator explicitly requests it.
    Replace the template visuals and rules while keeping external CSS and
    JavaScript files.
-4. Use native browser input. Prevent default behavior only for keys the game
-   consumes. Keep pointer coordinates relative to the game surface.
+4. Build for the Flow Cabin display contract in
+   [runtime-api.md](references/runtime-api.md). Treat the package viewport as a
+   `420 × 560` (`3:4`) game stage, fill it without size caps or centering, and
+   keep the layout responsive to viewport resize. Use native browser input.
+   Prevent default behavior only for keys the game consumes. Keep pointer
+   coordinates relative to the game surface.
 5. Register pause and resume through `window.FlowCabinGame` only when it exists.
    Stop animation, timers, and sound while paused; keep normal-browser preview
    working without the host object.
 6. Preserve `manifest.json.id` when modifying an existing game and explicitly
    increment `version`.
-7. Preview `package/index.html` in a browser and exercise keyboard, pointer,
-   pause/resume fallback, restart, and resize behavior.
+7. Preview `package/index.html` in a browser at `420 × 560` and at another
+   `3:4` size. Exercise keyboard, pointer, pause/resume fallback, restart, and
+   resize behavior; reject clipping, letterboxing, or overflow.
 8. Before packaging, ask only the triggered expert roles to review the finished
    package, then resolve release-blocking findings.
 9. Package from any working directory using absolute or resolved paths:
